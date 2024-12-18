@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Портфолио</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin: 0;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            padding: 15px;
+            color: #444;
+        }
+
+        .card a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 15px;
+            text-align: center;
+            margin: 0 15px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Менин GitHub Портфолиом</h1>
+    </header>
+    <main>
+        <div class="card">
+            <h2>Долбоор 1: Дүкөн</h2>
+            <p>HTML, CSS жана JavaScript менен жасалган минималдуу дүкөн. GitHub’да версияларды башкарууну колдондум.</p>
+            <a href="https://github.com/атыныз/dookon" target="_blank">GitHub'дан көрүү</a>
+        </div>
+        <div class="card">
+            <h2>Долбоор 2: Портфолио</h2>
+            <p>Өзүмдүн жумуштарымды көрсөтүү үчүн портфолио жасадым. GitHub Pages аркылуу хостинг жасадым.</p>
+            <a href="https://github.com/атыныз/portfolio" target="_blank">GitHub'дан көрүү</a>
+        </div>
+        <div class="card">
+            <h2>Долбоор 3: Open Source</h2>
+            <p>Open Source долбоорлордо катышып, багдарды оңдоп, жаңы функцияларды коштум.</p>
+            <a href="https://github.com/opensource/repo" target="_blank">Pull Request'ти көрүү</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Менин Портфолиом</p>
+    </footer>
+</body>
+</html>

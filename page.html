@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Games</title>
+  <link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Логика игр -->
+    <div class="logic">
+        <a href="./index.html">
+
+            <button class="btn">Артка</button>
+        </a>
+      <h2> JavaScript Менен жасалган оюндар </h2>
+      
+      <div class="game">
+        <h3>1 Оюн: Реакцияны Текшер </h3>
+        <button id="reactionBtn">Куто турун...</button>
+        <div id="reactionMessage"></div>
+      </div>
+
+      <div class="game">
+        <h3> 2 Оюн: кубик ыргытуу</h3>
+        <button id="rollDiceBtn">кубик ыргытуу</button>
+        <div id="diceResult"></div>
+      </div>
+
+      <div class="game">
+        <h3>3 Оюн: созду тап</h3>
+        <input type="text" id="wordInput" placeholder="Введите букву" maxlength="1">
+        <button id="checkLetterBtn">Проверить</button>
+        <div id="wordResult"></div>
+      </div>
+
+      <div class="game">
+        <h3> 4 Оюн: Лабиринт</h3>
+        <canvas id="mazeCanvas" width="300" height="300"></canvas>
+      </div>
+    </div>
+
+    <!-- Код -->
+    <div class="code">
+      <p>// Игра 1: Проверка реакции
+        const reactionBtn = document.getElementById('reactionBtn');
+        const reactionMessage = document.getElementById('reactionMessage');
+        let reactionTimeout, startTime;
+        
+        reactionBtn.addEventListener('click', () => {
+          if (reactionBtn.classList.contains('active')) {
+            const reactionTime = Date.now() - startTime;
+            reactionMessage.textContent = `Сиздин Рекцияныздын реакциясы: ${reactionTime} мс`;
+            reactionBtn.textContent = 'куто турун...';
+            reactionBtn.classList.remove('active');
+            setupReactionGame();
+          } else {
+            reactionMessage.textContent = 'Эрте! Жашылды куто турун';
+          }
+        });
+        
+        function setupReactionGame() {
+          clearTimeout(reactionTimeout);
+          const delay = Math.random() * 3000 + 2000;
+          reactionTimeout = setTimeout(() => {
+            reactionBtn.textContent = 'Басыныз!';
+            reactionBtn.classList.add('active');
+            startTime = Date.now();
+          }, delay);
+        }
+        setupReactionGame();
+        
+        // Игра 2: Бросок кубика
+        const rollDiceBtn = document.getElementById('rollDiceBtn');
+        const diceResult = document.getElementById('diceResult');
+        
+        rollDiceBtn.addEventListener('click', () => {
+          const diceRoll = Math.floor(Math.random() * 6) + 1;
+          diceResult.textContent = `Сиз ыргытыныз: ${diceRoll}`;
+        });
+        
+        // Игра 3: Угадай слово
+        const wordInput = document.getElementById('wordInput');
+        const checkLetterBtn = document.getElementById('checkLetterBtn');
+        const wordResult = document.getElementById('wordResult');
+        const secretWord = 'apple';
+        let guessedWord = '_'.repeat(secretWord.length).split('');
+        
+        checkLetterBtn.addEventListener('click', () => {
+          const letter = wordInput.value.toLowerCase();
+          wordInput.value = '';
+        
+          if (secretWord.includes(letter)) {
+            secretWord.split('').forEach((char, index) => {
+              if (char === letter) guessedWord[index] = letter;
+            });
+            wordResult.textContent = `соз: ${guessedWord.join(' ')}`;
+          } else {
+            wordResult.textContent = `Тамгалар "${letter}" создо жок.`;
+          }
+        
+          if (!guessedWord.includes('_')) {
+            wordResult.textContent = `  Сиз созду таптыныз: ${secretWord}`;
+          }
+        });
+        
+        // Игра 4: Лабиринт
+        const canvas = document.getElementById('mazeCanvas');
+        const ctx = canvas.getContext('2d');
+        const tileSize = 30;
+        const player = { x: 0, y: 0 };
+        const goal = { x: 9, y: 9 };
+        
+        function drawMaze() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = 'green';
+          ctx.fillRect(goal.x * tileSize, goal.y * tileSize, tileSize, tileSize);
+          ctx.fillStyle = 'blue';
+          ctx.fillRect(player.x * tileSize, player.y * tileSize, tileSize, tileSize);
+        }
+        
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowUp' && player.y > 0) player.y--;
+          if (e.key === 'ArrowDown' && player.y < 9) player.y++;
+          if (e.key === 'ArrowLeft' && player.x > 0) player.x--;
+          if (e.key === 'ArrowRight' && player.x < 9) player.x++;
+          drawMaze();
+          if (player.x === goal.x && player.y === goal.y) {
+            alert('Вы достигли цели!');
+            player.x = 0;
+            player.y = 0;
+            drawMaze();
+          }
+        });
+        
+        drawMaze();
+        
+        </p>
+    </div>
+  </div>
+  <script src="page.js"></script>
+  <script>
+    // Показать JS-код в правом блоке
+    document.getElementById('codeDisplay').textContent = `
+      // Логика игр (page.js)
+      ${document.querySelector('script[src="page.js"]').textContent}
+    `;
+  </script>
+</body>
+</html>

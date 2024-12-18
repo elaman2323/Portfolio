@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин Обуви</title>
+    <link rel="stylesheet" href="react.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-side">
+            <a href="./index.html">
+                <button class="btn">Артка</button>
+            </a>
+            <h1>Rect менен жасалган Код</h1>
+            <pre>
+                <code>
+                    {/* React менен Жасалган код */}
+                    const [cart, setCart] = useState([]); 
+                        {/* useState  корзинанын абалы */}
+                    const addToCart = (productName, price) => {
+                        setCart([...cart, { name: productName, 
+                             price: price, quantity: 1 }]);
+                    };
+                    const removeFromCart = (index) => {
+                        setCart(cart.filter((_, i) => i !== index));
+                    };
+                    const updateQuantity = (index, quantity) => {
+                        const newCart = [...cart];
+                        newCart[index].quantity = quantity;
+                        setCart(newCart);
+                    };
+                    const clearCart = () => {
+                        setCart([]);
+                    };
+                    const total = cart.reduce((sum, item) =>
+                     sum + item.price * item.quantity, 0);
+                </code>
+            </pre>
+        </div>
+
+        <div class="right-side">
+            <h1>Бут кийим дукону</h1>
+
+            <div class="product-container">
+                <div class="product">
+                    <img src="https://img.championat.com/i/m/r/1716816860388193440.jpg" alt="">
+                    <h2>Кроссовка</h2>
+                    <p>баасы: $50</p>
+                    <button class="button" onclick="addToCart('Кроссовки', 50)">корзинага кошуу</button>
+                </div>
+                <div class="product">
+                    <img src="https://kristina-milan.com/upload/iblock/060/vmvm35bjkndfnebdivey55kl8hzfpd3h.jpg" alt="">
+                    <h2>Туфли</h2>
+                    <p>баасы: $80</p>
+                    <button class="button" onclick="addToCart('Туфли', 80)">корзинага кошуу</button>
+                </div>
+                <div class="product">
+                    <img  src="https://kristina-milan.com/upload/iblock/253/okj3qvnx7rrwcxu1nodsyo9ff8cxbtna.jpg" alt="">
+                    <h2>Ботинка</h2>
+                    <p>Цена: $120</p>
+                    <button class="button" onclick="addToCart('Ботинки', 120)">корзинага кошуу</button>
+                </div>
+            </div>
+
+            <div class="cart">
+                <h2>Корзина</h2>
+                <ul id="cartItems"></ul>
+                <p id="totalPrice">Жалпы Баа: $0</p>
+                <button id="clearCart" onclick="clearCart()">корзинаны тазалоо</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="react.js"></script>
+</body>
+</html>

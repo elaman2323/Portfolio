@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Css</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS кодду Демонстрациялоо </h1>
+   
+
+        <!-- Блок с кодом CSS -->
+        <div class="code-example">
+            
+            <h2>код</h2>
+            <a href="./index.html">
+
+                <button class="minimal-button">Артка</button>
+            </a>
+            <pre>
+                <code>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.5em;
+    padding: 15px;
+    color: #333;
+}
+
+.card-description {
+    font-size: 1em;
+    padding: 15px;
+    color: #666;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+                </code>
+            </pre>
+        </div>
+
+        <!-- Блок с результатом HTML и CSS -->
+        <div class="card-container">
+            <div class="card">
+                <img src="https://images.biggeek.ru/1/435/474f/22218-16438f9a57a-c250-4efd-a922-29b6e0791d80-PhotoRoom.png" alt="Image 1" class="card-img">
+                <h3 class="card-title"> Кроссовки Jordan</h3>
+                <p class="card-description">
+                    Обувь Jordan для мужчин — это стильные и качественные кроссовки, которые идеально подходят для активного образа жизни и уличной моды. Они обеспечивают комфорт и поддержку при каждом шаге благодаря передовым технологиям и высококачественным материалам. Эти кроссовки сочетают в себе спортивный стиль и урбанистический дизайн, что делает их популярным выбором среди любителей бренда. Стоимость данной модели составляет 18,000 сомов, что отражает её высокое качество и престиж бренда.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://sneaker-street.ru/image/catalog/foto/DR0502-101/2__w-825__h-825__f-jpg.jpg" alt="Image 2" class="card-img">
+                <h3 class="card-title">Jordan</h3>
+                <p class="card-description">
+                    Обувь Jordan для мужчин обычно состоит из высококачественных материалов, таких как:
+                    
+                    Кожаный верх — для прочности и долговечности.
+                    Текстильные вставки — для улучшенной вентиляции и комфорта.
+                    Резиновая подошва — обеспечивает отличное сцепление и износостойкость.
+                    Мембранные материалы — для водоотталкивающих и дышащих свойств.
+                    Пена EVA — для амортизации и легкости при ходьбе.
+                    Эти компоненты обеспечивают не только стильный внешний вид, но и удобство при длительном ношении, а также устойчивость к внешним воздействиям.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://outmaxshop.ru/components/com_jshopping/files/img_products/29952/nike-air-jordan-1-mid-29952-5.jpg" alt="Image 3" class="card-img">
+                <h3 class="card-title">Jordan</h3>
+                <p class="card-description">Обувь Jordan для мужчин отличается высоким качеством, что обеспечивается использованием передовых технологий и материалов. Качество этих кроссовок проявляется в нескольких аспектах:
+
+                    Прочность и долговечность — благодаря использованию качественных кожаных и текстильных материалов, обувь устойчива к износу и сохраняет свой внешний вид на долгое время.
+                    Комфорт — амортизация, обеспечиваемая пеной EVA и подошвой с воздушными подушками, делает каждую прогулку или тренировку комфортной.
+                    Поддержка — специально разработанная конструкция обеспечивает отличную фиксацию стопы, что снижает риск травм.
+                    Вентилируемость — материалы, использующиеся в обуви, способствуют циркуляции воздуха, предотвращая перегрев и повышенную потливость ног.
+                    Дизайн и стиль — кроссовки имеют современный и узнаваемый дизайн, который остается актуальным в мире моды.
+                    Эти факторы делают обувь Jordan отличным выбором для тех, кто ценит как стиль, так и функциональность.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

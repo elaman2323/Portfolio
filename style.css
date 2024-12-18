@@ -1,0 +1,106 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: #333;
+}
+
+/* Обертка портфолио */
+.portfolio-wrapper {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Эффект появления имени */
+.name-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Заголовки */
+.portfolio-title {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.portfolio-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Логотипы */
+.logos-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+.tech-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-logo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .name-title {
+        font-size: 2.5rem;
+    }
+    .portfolio-title {
+        font-size: 1.5rem;
+    }
+    .tech-logo {
+        width: 90px;
+        height: 90px;
+    }
+}

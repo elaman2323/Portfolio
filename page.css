@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .logic, .code {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  
+  .logic {
+    background-color: #f7f7f7;
+    border-right: 2px solid #ddd;
+  }
+  
+  .code {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: "Courier New", Courier, monospace;
+    white-space: pre-wrap;
+    overflow-y: auto;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  canvas {
+    border: 1px solid black;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .game {
+    margin-top: 20px;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #555;
+}
